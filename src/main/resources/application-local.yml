@@ -1,0 +1,30 @@
+spring:
+  config:
+    activate:
+      on-profile: local
+  datasource:
+    url: jdbc:mysql://${DB_HOST:localhost}:${DB_PORT:3306}/${DB_NAME:ootd}?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=Asia/Seoul
+    username: ${DB_USERNAME:ootd}
+    password: ${DB_PASSWORD:ootd}
+  jpa:
+    hibernate:
+      ddl-auto: create
+    properties:
+      hibernate:
+        format_sql: true
+  data:
+    redis:
+      host: ${REDIS_HOST:localhost}
+      port: ${REDIS_PORT:6379}
+
+logging:
+  level:
+    org.hibernate.SQL: debug
+
+app:
+  jwt:
+    secret: ${JWT_SECRET:local-local-local-local-local-local-local-local-secret-key-123456}
+  oauth:
+    kakao:
+      client-id: ${KAKAO_CLIENT_ID:test-kakao-client-id}
+      client-secret: ${KAKAO_CLIENT_SECRET:}

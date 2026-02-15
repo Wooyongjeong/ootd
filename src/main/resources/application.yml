@@ -1,0 +1,15 @@
+spring:
+  application:
+    name: ootd
+  profiles:
+    default: local
+  jpa:
+    open-in-view: false
+  jackson:
+    time-zone: Asia/Seoul
+
+app:
+  write-back-interval-ms: ${WRITE_BACK_INTERVAL_MS:300000}
+  jwt:
+    access-token-expiration-seconds: ${JWT_ACCESS_TOKEN_EXP:1800}
+    refresh-token-expiration-seconds: ${JWT_REFRESH_TOKEN_EXP:1209600}

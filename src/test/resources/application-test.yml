@@ -1,0 +1,25 @@
+spring:
+  datasource:
+    url: jdbc:h2:mem:ootd-test;MODE=MySQL;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
+    username: sa
+    password:
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+    open-in-view: false
+  data:
+    redis:
+      host: localhost
+      port: 6379
+  task:
+    scheduling:
+      enabled: false
+
+app:
+  write-back-interval-ms: 600000
+  jwt:
+    secret: test-test-test-test-test-test-test-test-secret-key-123456
+  oauth:
+    kakao:
+      client-id: test-client-id
+      client-secret: test-client-secret
